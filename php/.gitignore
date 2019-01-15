@@ -1,0 +1,4 @@
+vendor/
+*.bak
+*.swp
+var.yaml

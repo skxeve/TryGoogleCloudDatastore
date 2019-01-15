@@ -1,0 +1,14 @@
+application: try-google-cloud-storage
+version: 1
+service: php
+
+runtime: php55
+api_version: 1
+threadsafe: true
+
+includes:
+- var.yaml
+
+handlers:
+- url: /.*
+  script: public/index.php
