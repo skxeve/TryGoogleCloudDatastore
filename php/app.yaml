@@ -1,6 +1,4 @@
-application: try-google-cloud-storage
-version: 1
-service: php
+service: default
 
 runtime: php55
 api_version: 1

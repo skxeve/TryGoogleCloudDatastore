@@ -18,8 +18,8 @@ class SimpleRouter
 
     public function __construct()
     {
-        $this->path = $_SERVER['PATH_INFO'];
-        $this->queryString = $_SERVER['QUERY_STRING'];
+        $this->path = $_SERVER['REQUEST_URI'];
+        $this->queryString = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
         $this->method = $_SERVER['REQUEST_METHOD'];
 
         $this->pathList = $this->parsePath($this->path);

@@ -5,6 +5,7 @@ class Index
 {
     public function action()
     {
+        $server = print_r($_SERVER, true);
         $html = <<<EOM
 <html>
 <head>
@@ -15,6 +16,9 @@ class Index
 Hello GAE!
 </body>
 </html>
+<!--
+$server
+-->
 EOM;
         echo $html;
     }
