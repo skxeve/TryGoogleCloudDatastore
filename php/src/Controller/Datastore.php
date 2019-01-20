@@ -7,6 +7,15 @@ class Datastore
 {
     public function listAction()
     {
+        $dao = new Dao;
+        $result = $dao->execQuery('SELECT * FROM Person');
+        $this->printDump($result, '#ccccff');
+        $i = 0;
+        foreach ($result as $item) {
+            echo $i++;
+            echo '<br/>' . PHP_EOL;
+            $this->printDump($item, '#ccffff');
+        }
     }
 
     public function readAction()
@@ -33,16 +42,20 @@ class Datastore
         $this->printEntity($entity);
     }
 
-    protected function getOne(array $array)
-    {
-        shuffle($array);
-        return array_shift($array);
-    }
-
     protected function printEntity($entity)
     {
-        echo '<pre style="background-color: #ccffcc;">';
-        var_dump($entity);
-        echo '</pre>';
+        $this->printDump($entity, '#ccffcc');
+    }
+
+    protected function getOne(array $array) {
+        $key = array_rand($array);
+        return $array[$key];
+    }
+
+    protected function printDump($var, $bgColor = '')
+    {
+        echo PHP_EOL . PHP_EOL . '<pre style="background-color: ' . $bgColor . ';">';
+        var_dump($var);
+        echo '</pre>' . PHP_EOL . PHP_EOL;
     }
 }

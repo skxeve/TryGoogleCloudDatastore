@@ -14,4 +14,6 @@ env_variables:
 ```
 
 ## 参考資料
-[(Google公式) PHP Bookshelf Getting Started](https://cloud.google.com/php/getting-started/using-cloud-datastore?hl=ja)
+
+- [(Google公式) PHP Bookshelf Getting Started](https://cloud.google.com/php/getting-started/using-cloud-datastore?hl=ja)
+- [API Documentation](http://googleapis.github.io/google-cloud-php/#/docs/cloud-datastore/v1.6.0/datastore/readme)

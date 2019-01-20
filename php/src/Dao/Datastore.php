@@ -48,4 +48,10 @@ class Datastore
         $entity = $this->ds->lookup($key);
         return $entity;
     }
+
+    public function execQuery(...$args)
+    {
+        $query = $this->ds->gqlQuery(...$args);
+        return $this->ds->runQuery($query);
+    }
 }
